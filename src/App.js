@@ -1,3 +1,5 @@
+import Stack from "react-bootstrap/Stack";
+
 export const App = () => {
-  return <div>App</div>;
+  return <Stack>App</Stack>;
 };

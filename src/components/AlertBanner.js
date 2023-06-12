@@ -1,5 +1,9 @@
-import Stack from "react-bootstrap/Stack";
+import Alert from "react-bootstrap/Alert";
 
-export const AlertBanner = () => {
-  return <Stack>AlertBanner</Stack>;
+export const AlertBanner = ({ message }) => {
+  return (
+    <Alert variant="warning" className="text-center">
+      {message}
+    </Alert>
+  );
 };

@@ -1,5 +1,13 @@
-import Stack from "react-bootstrap/Stack";
+import { BrowserRouter } from "react-router-dom";
+
+import { NavigationBar } from "./components/NavigationBar";
+import { AppRoutes } from "./AppRoutes";
 
 export const App = () => {
-  return <Stack>App</Stack>;
+  return (
+    <BrowserRouter>
+      <NavigationBar />
+      <AppRoutes />
+    </BrowserRouter>
+  );
 };

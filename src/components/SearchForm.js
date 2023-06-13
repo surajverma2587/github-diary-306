@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-export const SearchForm = () => {
+export const SearchForm = ({ handleSubmit }) => {
   const initialValues = {
     username: "",
   };
@@ -12,8 +12,8 @@ export const SearchForm = () => {
     username: Yup.string().required("Please enter a GitHub username."),
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const onSubmit = ({ username }) => {
+    handleSubmit(username);
   };
 
   const formik = useFormik({

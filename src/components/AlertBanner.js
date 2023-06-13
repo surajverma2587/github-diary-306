@@ -1,8 +1,8 @@
 import Alert from "react-bootstrap/Alert";
 
-export const AlertBanner = ({ message }) => {
+export const AlertBanner = ({ message, variant = "warning" }) => {
   return (
-    <Alert variant="warning" className="text-center">
+    <Alert variant={variant} className="text-center">
       {message}
     </Alert>
   );

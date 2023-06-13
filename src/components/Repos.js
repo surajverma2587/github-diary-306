@@ -1,5 +1,16 @@
 import Stack from "react-bootstrap/Stack";
 
-export const Repos = () => {
-  return <Stack>Repos</Stack>;
+import { RepoCard } from "./RepoCard";
+
+export const Repos = ({ repos }) => {
+  return (
+    <Stack
+      direction="horizontal"
+      className="justify-content-evenly align-items-start flex-wrap border p-4"
+    >
+      {repos.map((repo) => {
+        return <RepoCard repo={repo} />;
+      })}
+    </Stack>
+  );
 };

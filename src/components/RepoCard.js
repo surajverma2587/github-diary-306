@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Stack from "react-bootstrap/Stack";
 
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 
-export const RepoCard = ({ repo }) => {
+export const RepoCard = ({ repo, setRepos }) => {
+  const location = useLocation();
   const itemsFromLS = getFromLocalStorage("repos");
 
   const [addedToLS, setAddedToLS] = useState(
@@ -34,6 +36,10 @@ export const RepoCard = ({ repo }) => {
     localStorage.setItem("repos", JSON.stringify(newItems));
 
     setAddedToLS(false);
+
+    if (location.pathname === "/my-repos") {
+      setRepos(newItems);
+    }
   };
 
   return (

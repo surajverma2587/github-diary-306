@@ -2,14 +2,14 @@ import Stack from "react-bootstrap/Stack";
 
 import { RepoCard } from "./RepoCard";
 
-export const Repos = ({ repos }) => {
+export const Repos = ({ repos, setRepos }) => {
   return (
     <Stack
       direction="horizontal"
       className="justify-content-evenly align-items-start flex-wrap border p-4"
     >
       {repos.map((repo) => {
-        return <RepoCard key={repo.id} repo={repo} />;
+        return <RepoCard key={repo.id} repo={repo} setRepos={setRepos} />;
       })}
     </Stack>
   );

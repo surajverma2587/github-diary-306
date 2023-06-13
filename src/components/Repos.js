@@ -9,7 +9,7 @@ export const Repos = ({ repos }) => {
       className="justify-content-evenly align-items-start flex-wrap border p-4"
     >
       {repos.map((repo) => {
-        return <RepoCard repo={repo} />;
+        return <RepoCard key={repo.id} repo={repo} />;
       })}
     </Stack>
   );
